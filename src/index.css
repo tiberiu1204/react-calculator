@@ -1,0 +1,26 @@
+body {
+   height: 100vh;
+   width: 100vw;
+   margin: 0;
+   background: linear-gradient(
+  45deg,
+  hsl(240deg 100% 74%) 0%,
+  hsl(278deg 86% 70%) 11%,
+  hsl(310deg 91% 68%) 22%,
+  hsl(323deg 100% 68%) 33%,
+  hsl(336deg 100% 69%) 44%,
+  hsl(357deg 100% 73%) 56%,
+  hsl(20deg 100% 68%) 67%,
+  hsl(36deg 100% 61%) 78%,
+  hsl(48deg 100% 53%) 89%,
+  hsl(55deg 100% 50%) 100%
+);
+}
+
+#root {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
