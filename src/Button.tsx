@@ -7,7 +7,7 @@ export enum ButtonType {
   DEL = "DEL",
   INVERSE = "1/x",
   SQUARED = "x²",
-  SQURT = "√x",
+  SQRT = "√x",
   DIVIDED = "/",
   SEVEN = "7",
   EIGHT = "8",
@@ -29,13 +29,18 @@ export enum ButtonType {
 
 interface Props {
   color: "white" | "grey" | "blue";
+  onClick: () => void;
   type: ButtonType;
 }
 
-export const Button = ({ color, type }: Props) => {
+export const Button = ({ color, onClick, type }: Props) => {
   return (
     <div className="calculator-button-wrapper">
-      <button type="button" className={`calculator-button ${color}`}>
+      <button
+        type="button"
+        className={`calculator-button ${color}`}
+        onClick={onClick}
+      >
         {type}
       </button>
     </div>
