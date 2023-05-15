@@ -1,38 +1,45 @@
 import "./Button.css";
 
 export enum ButtonType {
-  MOD = "MOD",
+  MOD = "%",
   CE = "CE",
   C = "C",
   DEL = "DEL",
-  INVERSE = "INVERSE",
-  SQUARED = "SQUARED",
-  SQURT = "SQRT",
-  DIVIDED = "DIVIDED",
-  SEVEN = "SEVEN",
-  EIGHT = "EIGHT",
-  NINE = "NINE",
-  TIMES = "TIMES",
-  FOUR = "FOUR",
-  FIVE = "FIVE",
-  SIX = "SIX",
-  MINUS = "MINUS",
-  ONE = "ONE",
-  TWO = "TWO",
-  THREE = "THREE",
-  PLUS = "PLUS",
-  NEGATE = "NEGATE",
-  ZERO = "ZERO",
-  POINT = "POINT",
-  EQUALS = "EQUALS",
+  INVERSE = "1/x",
+  SQUARED = "x²",
+  SQURT = "√x",
+  DIVIDED = "/",
+  SEVEN = "7",
+  EIGHT = "8",
+  NINE = "9",
+  TIMES = "×",
+  FOUR = "4",
+  FIVE = "5",
+  SIX = "6",
+  MINUS = "-",
+  ONE = "1",
+  TWO = "2",
+  THREE = "3",
+  PLUS = "+",
+  NEGATE = "+/-",
+  ZERO = "0",
+  POINT = ".",
+  EQUALS = "=",
 }
 
 interface Props {
+  color: "white" | "grey" | "blue";
   type: ButtonType;
 }
 
-export const Button = ({ type }: Props) => {
-  return <div className="calculator-button">{type}</div>;
+export const Button = ({ color, type }: Props) => {
+  return (
+    <div className="calculator-button-wrapper">
+      <button type="button" className={`calculator-button ${color}`}>
+        {type}
+      </button>
+    </div>
+  );
 };
 
 export default Button;
