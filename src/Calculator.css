@@ -36,11 +36,12 @@
    /* border: 1px solid black; */
    font-family: inherit;
    font-size: 46px;
+   overflow: auto hidden;
 }
-
 .calculator-screen-input, .calculator-screen-result {
    height: 50%;
-   display: flex;
+   /* display: flex; */
+   text-align: right;
 }
 
 .calculator-screen-result {

@@ -34,18 +34,12 @@ const Calculator = () => {
     }
 
     if (value == ButtonType.NEGATE) {
-      if (inputNumber.length == 19) {
-        return;
-      }
       Number(inputNumber) > 0
         ? setInputNumber("-" + inputNumber)
         : setInputNumber(inputNumber.slice(1, inputNumber.length));
     }
 
     if (value == ButtonType.POINT) {
-      if (inputNumber.length == 19) {
-        return;
-      }
       if (!inputNumber.includes(".")) {
         setInputNumber(inputNumber + ".");
       }
@@ -57,9 +51,6 @@ const Calculator = () => {
     }
 
     if (numbers.includes(value)) {
-      if (inputNumber.length == 19) {
-        return;
-      }
       if (inputNumber == "0") {
         setInputNumber(value);
       } else {
