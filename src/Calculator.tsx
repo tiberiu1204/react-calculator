@@ -1,15 +1,25 @@
 import "./Calculator.css";
 import { Button, ButtonType } from "./Button";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Calculator = () => {
   const buttons: ButtonType[] = Object.values(ButtonType);
   const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
   const operands = ["%", "+", "-", "=", "/", "×", "√x", "1/x", "x²"];
+
   const [inputNumber, setInputNumber]: [string, (value: string) => void] =
     useState("0");
   const [resultNumber, setResultNumber]: [string, (value: string) => void] =
     useState("");
+
+  const endInputRef = useRef<null | HTMLDivElement>(null);
+  const endResultRef = useRef<null | HTMLDivElement>(null);
+  useEffect(() => {
+    endInputRef.current?.scrollIntoView();
+  }, [inputNumber]);
+  useEffect(() => {
+    endResultRef.current?.scrollIntoView();
+  }, [resultNumber]);
 
   const getColor: (index: number) => "white" | "grey" | "blue" = (index) => {
     const line: number = Math.floor(index / 4);
@@ -63,8 +73,16 @@ const Calculator = () => {
     <div className="calculator">
       <div className="calculator-screen-wraper">
         <div className="calculator-screen">
-          <div className="calculator-screen-result">{resultNumber}</div>
-          <div className="calculator-screen-input">{inputNumber}</div>
+          <div className="calculator-screen-result">
+            <span className="overflow-content">{resultNumber}</span>
+            <div ref={endResultRef} />
+          </div>
+          <div className="calculator-screen-input">
+            <span className="overflow-content">
+              {inputNumber}
+              <div ref={endInputRef} />
+            </span>
+          </div>
         </div>
       </div>
       <div className="calculator-buttons-wraper">

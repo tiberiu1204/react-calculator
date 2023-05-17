@@ -40,8 +40,7 @@
 }
 .calculator-screen-input, .calculator-screen-result {
    height: 50%;
-   /* display: flex; */
-   text-align: right;
+   display: flex;
 }
 
 .calculator-screen-result {
@@ -53,4 +52,9 @@
 .calculator-screen-input {
    justify-content: flex-end;
    align-items: flex-end;
+}
+
+.overflow-content {
+   display: flex;
+   min-width: 0;
 }
