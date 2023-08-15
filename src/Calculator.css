@@ -35,7 +35,7 @@
    height: 100%;
    /* border: 1px solid black; */
    font-family: inherit;
-   font-size: 46px;
+   font-size: 36px;
    overflow: auto hidden;
 }
 .calculator-screen-input, .calculator-screen-result {

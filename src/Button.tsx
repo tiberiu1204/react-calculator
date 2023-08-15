@@ -1,7 +1,7 @@
 import "./Button.css";
 
 export enum ButtonType {
-  MOD = "%",
+  PERCENT = "%",
   CE = "CE",
   C = "C",
   DEL = "DEL",
